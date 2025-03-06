@@ -1,5 +1,5 @@
-from configs._def_main_ import *
 from pyrogram import Client
+from configs._def_main_ import *
 
 app = Client("Ryas",
              api_id=conta('apid'),
@@ -15,7 +15,5 @@ async def callpri(app, callback_query):
     else:
         await callback_query.continue_propagation()
 
-if app:
-    app.run()
-else:
-    print('Error faltan argumentos.')
+# Simplemente correr el bot
+app.run()

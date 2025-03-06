@@ -1,10 +1,11 @@
 from configs._def_main_ import *
+from pyrogram import Client
 
 app = Client("Ryas",
-        api_id = conta('apid'),
-            api_hash = conta('hasd'),
-                bot_token = conta('token'),
-                    plugins=dict(root="ryas_plugins"))
+             api_id=conta('apid'),
+             api_hash=conta('hasd'),
+             bot_token=conta('token'),
+             plugins=dict(root="ryas_plugins"))
 
 @app.on_callback_query()
 async def callpri(app, callback_query):
@@ -15,6 +16,6 @@ async def callpri(app, callback_query):
         await callback_query.continue_propagation()
 
 if app:
-    cls(),app.run()
+    app.run()
 else:
-    print('Error faltas de argumentos.')
+    print('Error faltan argumentos.')

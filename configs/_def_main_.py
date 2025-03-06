@@ -1,30 +1,19 @@
-from pyrogram import Client,filters
+from pyrogram import Client, filters
 from ryas_templates.chattext import *
 from ryas_templates.botones import *
 from pyrogram import *
 from datetime import datetime
-import os, requests,re,time
+import os, requests, re, time
 from configs.configsBot import *
 from _mainConten_ import *
 
 def ryas(bit):
-    nix = Client.on_message(filters.command(bit, ["/", ".", ",","-","$","%"]))
+    nix = Client.on_message(filters.command(bit, ["/", ".", ",", "-", "$", "%"]))
     return nix
 
 def ryasbt(bor):
     nox = Client.on_callback_query(filters.regex(bor))
     return nox
-
-def cls():
-    os.system('cls' if os.name == 'nt' else 'clear')
-    print('Bienvenido a ryas onn')
-
-def dia():
-    if datetime.now().hour < 12:return "Buenos dias ⛅️"
-    elif datetime.now().hour >= 11 and datetime.now().hour < 16:return "Buenas Tades ☀️"
-    elif datetime.now().hour >= 17 and datetime.now().hour < 19:return "Buenas Nochesitas 🌅"
-    elif datetime.now().hour >= 19 and datetime.now().hour < 24:return "Buenas Noche 🌃 "
-    else:return "Unos Buenos dias ⛅️"
 
 def conta(call):
     if call == 'apid':
@@ -34,9 +23,9 @@ def conta(call):
     else:
         return token 
 
-
 usertime = {}
 timetake = 30
+
 def atspam(func):
     async def wrapper(client, message):
         user_id = message.from_user.id
@@ -53,3 +42,6 @@ def atspam(func):
             usertime[user_id] = time.time()
 
     return wrapper
+
+# Added print statement
+print('Bienvenido a ryas onn')
